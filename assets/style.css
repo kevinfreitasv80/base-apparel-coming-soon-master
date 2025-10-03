@@ -1,0 +1,196 @@
+:root {
+  --gray: hsl(0, 6%, 24%);
+  --pink: hsl(0, 36%, 70%);
+}
+
+body,
+input {
+  margin: 0;
+  font-family: "Josefin Sans", "Courier New", Courier, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-desktop {
+  width: 50%;
+  height: 100dvh;
+  background: url(../images/hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.infor {
+  position: relative;
+  width: 50%;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.texts {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 3em;
+  max-width: 6em;
+  color: var(--gray);
+  line-height: 1.25em;
+}
+.title span {
+  color: var(--pink);
+  font-weight: 300;
+}
+
+.description {
+  max-width: 27em;
+  color: var(--pink);
+  font-size: 0.9em;
+  margin: 2.5em 0;
+  line-height: 2em;
+}
+
+#form {
+  outline: 0.1em solid hsla(0, 49%, 83%, 0.801);
+  max-width: 25em;
+  border-radius: 10em;
+}
+#form.error {
+  outline: 0.1em solid red;
+  max-width: 25em;
+  border-radius: 10em;
+}
+#form article {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5em;
+}
+#form article * {
+  border: none;
+  background: none;
+  outline: none;
+}
+#form article input {
+  font-size: 1em;
+  width: 75%;
+  padding: 1em 0;
+}
+#form article input::placeholder {
+  color: var(--pink);
+  opacity: 0.6;
+}
+#form article button {
+  cursor: pointer;
+  width: 25%;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  padding: 1em 0;
+  border-radius: 20em;
+  padding: auto 2em;
+  box-shadow: 0 0.8em 1em hsla(358, 24%, 79%, 0.808);
+}
+#form article button:hover {
+  background: linear-gradient(135deg, hsl(358, 76%, 92%), hsl(355, 74%, 87%));
+  box-shadow: 0 0.8em 1em hsla(359, 100%, 90%, 0.808);
+  padding: 1em 0;
+  border-radius: 20em;
+}
+
+.hero-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 40.625em) {
+  body {
+    flex-direction: column;
+  }
+
+  .hero-desktop,
+  .infor {
+    width: 100%;
+  }
+  .hero-desktop {
+    height: 20dvh;
+    background-position: top 10% right 50%;
+  }
+
+  .infor {
+    height: 80dvh;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .texts {
+    position: static;
+    transform: translate(0, 0);
+    width: min-content;
+  }
+  .title {
+    margin: 0.3em 0;
+  }
+  .description {
+    margin: 0 0 1em 0;
+  }
+}
+
+@media screen and (max-width: 23.4375em) {
+  .infor {
+    height: 100dvh;
+    font-size: 0.8em;
+  }
+  .hero-desktop {
+    display: none;
+  }
+  .texts {
+    width: 100%;
+    height: 100dvh;
+  }
+  .logo {
+    padding: 2em;
+  }
+  .hero-mobile {
+    display: block;
+    width: 100%;
+  }
+  .title,
+  .description {
+    max-width: max-content;
+    text-align: center;
+  }
+  .title {
+    margin-top: 1.5em;
+  }
+  .description {
+    padding: 0 1em;
+  }
+  #form {
+    display: block;
+    margin: auto;
+  }
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(./fonts/JosefinSans-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(./fonts/JosefinSans-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url(./fonts/JosefinSans-SemiBold.ttf);
+  font-weight: 600;
+}
