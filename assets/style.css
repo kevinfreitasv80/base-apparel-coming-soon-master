@@ -107,6 +107,10 @@ body {
   display: none;
 }
 
+.errorEmail {
+  color: red;
+}
+
 @media screen and (max-width: 40.625em) {
   body {
     flex-direction: column;
